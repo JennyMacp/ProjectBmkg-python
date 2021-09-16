@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ======= Head Section ======= -->
+  <!-- <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites with Bootstrap</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Get Started</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'img/hero-img.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section> -->
+<!-- Head Hero -->
+
+  <main id="main">
+
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <br>
+          <h2>Buku Tamu</h2>
+          <p>Silahkan mengisi daftar hadir disini</p>
+        </header>
+
+        <!-- <form action="" method="POST">
+          {% csrf_token %}
+          <table>
+            <tr>
+              <th width="200px">
+                <label for="nama" style="color: black; font-size: 20px;">Nama Lengkap</label>
+              </th>
+              <td>
+                {{form.nama}}
+              </td>
+            </tr>
+            <tr>
+              <th width="200px">
+                <label for="alamat" style="color: black; font-size: 20px;">Alamat</label>
+              </th>
+              <td>
+                {{form.alamat}}
+              </td>
+            </tr>
+            <tr>
+              <th width="200px">
+                <label for="telepon" style="color: black; font-size: 20px;">No. Hp / Telp.</label>
+              </th>
+              <td>
+                {{form.telepon}}
+              </td>
+            </tr>
+            <tr>
+              <th width="200px">
+                <label for="email" style="color: black; font-size: 20px;">Email</label>
+              </th>
+              <td>
+                {{form.email}}
+              </td>
+            </tr>
+            <tr>
+              <th width="200px">
+                <label for="instansi" style="color: black; font-size: 20px;">Asal Instansi</label>
+              </th>
+              <td>
+                {{form.instansi}}
+              </td>
+            </tr>
+            <tr>
+              <th width="300px">
+                <label for="tanggal" style="color: black; font-size: 20px;">Tanggal Kedatangan</label>
+              </th>
+              <td>
+                {{form.tanggal}}
+              </td>
+            </tr>
+            <tr>
+              <th width="200px">
+                <label for="keperluan" style="color: black; font-size: 20px;">Keperluan</label>
+              </th>
+              <td width="500px">
+                {{form.keperluan}}
+              </td>
+            </tr>
+            <div style="display:none;" id="rujukan">
+              <tr>
+                tesss
+              </tr>
+            </div>
+          </table>
+          <br>
+          <div class="text-center text-lg-start">
+            <button type="submit" class="btn btn-primary">
+              <span>Kirim</span> &emsp;
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </form> -->
+        <div class="row">
+          <!-- ============================================================== -->
+          <!-- valifation types -->
+          <!-- ============================================================== -->
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="card">
+                  <div class="card-body">
+                      <form method="POST" id="validationform" data-parsley-validate="" novalidate="">
+                          {% csrf_token %}
+
+                          <div class="form-group row">
+                              <label class="col-12 col-sm-3 col-form-label text-sm-right">Nama Lengkap</label>
+                              <div class="col-12 col-sm-8 col-lg-6">
+                                  {{form.nama}}
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-12 col-sm-3 col-form-label text-sm-right">Alamat</label>
+                              <div class="col-12 col-sm-8 col-lg-6">
+                                  {{form.alamat}}
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-12 col-sm-3 col-form-label text-sm-right">No. Hp / Telp</label>
+                              <div class="col-12 col-sm-8 col-lg-6">
+                                  {{form.telepon}}
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Email</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {{form.email}}
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Asal Instansi</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {{form.instansi}}
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Tanggal Kedatangan</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {{form.tanggal}}
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Keperluan</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {{form.keperluan}}
+                            </div>
+                          </div>
+                              <div class="form-group row" style="display:none;" id="keperluan">
+                                  <div class="col-12 col-sm-8 col-lg-6" style="margin-left: 275px;">
+                                      {{ form.keperluan_lainnya }}  
+                                  </div>
+                              </div>
+                          <div class="form-group row text-right">
+                              <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                  <button type="submit" class="btn btn-space btn-primary" formnovalidate="formnovalidate">Submit</button>
+                                  <a href="" class="btn btn-space btn-secondary">Cancel</a>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <!-- ============================================================== -->
+          <!-- end valifation types -->
+          <!-- ============================================================== -->
+      </div>
+      </div>
+
+    </section><!-- End Values Section -->
+
+  </main><!-- End #main -->
+
+{% endblock content %}
